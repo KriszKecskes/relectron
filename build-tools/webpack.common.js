@@ -4,6 +4,10 @@ const webpack = require('webpack');
 
 module.exports = {
 
+  performance: {
+    hints: false
+  },
+
   entry: './src/App.js',
 
   output: {
@@ -19,6 +23,15 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            outputPath: 'assets/images',
+          },
+        }
       }
     ]
   },
@@ -29,11 +42,6 @@ module.exports = {
     }),
     new webpack.ProgressPlugin()
   ],
-
-  node: {
-    __dirname: false,
-    __filename: false
-  },
 
   resolve: {
     extensions: ['.js', '.jsx']

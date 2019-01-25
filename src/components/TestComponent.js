@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './TestComponent.css';
 
 const TestComponent = () => {
   return(
-    <div className="test-component">Test Component! :-)</div>
+    <Fragment>
+      <div className="test-component">Test Component! :-)</div>
+    </Fragment>
   );
 };
 

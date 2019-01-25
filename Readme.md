@@ -15,6 +15,8 @@ npm run start or yarn start
 
 Build installer for Windows:
 ````javascript
-npm run build-windows
+npm run build-windows or yarn build-windows
 ````
 You will be able to find your installer (msi) in *dist* folder!
+
+![Relectron](./screenshot.JPG)

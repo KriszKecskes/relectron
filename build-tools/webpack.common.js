@@ -7,7 +7,7 @@ module.exports = {
   entry: './src/App.js',
 
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle.[contenthash].js',
     path: paths.build
   },
 
@@ -19,10 +19,6 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
       }
     ]
   },

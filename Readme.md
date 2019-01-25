@@ -14,5 +14,5 @@ npm install or yarn install
 
 Start development:
 ````javascript
-npm run watch or yarn watch
+npm run start or yarn start
 ````

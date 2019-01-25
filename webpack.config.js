@@ -1,3 +1,4 @@
+process.traceDeprecation = true;
 const merge = require('webpack-merge');
 const commonConfig = require('./build-tools/webpack.common');
 

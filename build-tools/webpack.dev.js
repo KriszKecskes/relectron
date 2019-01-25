@@ -1,11 +1,41 @@
-const shell = require('webpack-shell-plugin');
+const shell2 = require('webpack-synchronizable-shell-plugin');
+const exec = require('child_process').exec;
+
 
 module.exports = {
 
   devtool: 'eval-source-map',
 
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader:'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
+      }
+    ]
+  },
+
   plugins: [
-    new shell({ onBuildStart:['rimraf build'] ,onBuildEnd:['npm run electron-dev']})
+    {
+      apply: (compiler) => {
+        compiler.hooks.afterEmit.tap('AfterEmitPlugin', ( compilation ) => {
+          exec('npm run electron-dev', (err, stdout, stderr) => {
+            if (stdout) process.stdout.write(stdout);
+            if (stderr) process.stderr.write(stderr);
+          });
+        });
+      }
+    }
   ]
 
 };

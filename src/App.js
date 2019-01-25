@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TestComponent from './components/TestComponent';
+import Welcome from './components/Welcome/Welcome';
 
 ReactDOM.render(
-  <TestComponent/>,
+  <Welcome />,
   document.getElementById('root')
 );

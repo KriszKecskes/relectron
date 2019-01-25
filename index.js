@@ -7,7 +7,16 @@ if(process.env.NODE_ENV === "development") {
 }
 
 function createWindow () {
-  win = new BrowserWindow({ width: 1024, height: 768, webPreferences: { nodeIntegration: false } });
+
+  win = new BrowserWindow({ 
+    width: 1024, 
+    height: 768, 
+    minHeight: 768,
+    minWidth: 1024,
+    webPreferences: { nodeIntegration: false }
+  });
+
+  win.setMenu(null);
 
   win.loadURL(url.format({
     pathname: path.resolve(__dirname, 'build', 'index.html'),

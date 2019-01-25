@@ -1,6 +1,7 @@
 {
   "name": "relectron",
   "version": "1.0.0",
+  "description": "An Electron boilerplate with React",
   "author": {
     "name": "Krisztian Kecskes",
     "url": "https://kecsk.me"

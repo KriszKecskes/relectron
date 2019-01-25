@@ -1,11 +1,7 @@
 # 🤖 Relectron
 This repository is under construction!
 
-## 🧱 Todos
-* Hot reload
-* Build process
-
-## 🧶 Commands
+## 🔌 Commands
 
 Install dependencies:
 ````javascript

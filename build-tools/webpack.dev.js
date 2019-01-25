@@ -28,7 +28,7 @@ module.exports = {
   plugins: [
     {
       apply: (compiler) => {
-        compiler.hooks.afterEmit.tap('AfterEmitPlugin', ( compilation ) => {
+        compiler.hooks.afterPlugins .tap('AfterEmitPlugin', ( compilation ) => {
           exec('npm run electron-dev', (err, stdout, stderr) => {
             if (stdout) process.stdout.write(stdout);
             if (stderr) process.stderr.write(stderr);

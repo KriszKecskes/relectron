@@ -1,7 +1,8 @@
 const { app, BrowserWindow } = require('electron');
 
 if(process.env.NODE_ENV === "development") {
-  require('electron-reload')(__dirname);
+  const path = require('path');
+  const reload = require('electron-reload')(path.resolve(__dirname, 'build'));
 }
 
 function createWindow () {

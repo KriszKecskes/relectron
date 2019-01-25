@@ -5,9 +5,13 @@
     "name": "Krisztian Kecskes",
     "url": "https://kecsk.me"
   },
+  "main": "./index.js",
   "repository": "https://github.com/krisztiankecskes/relectron.git",
   "license": "MIT",
   "devDependencies": {
+    "electron": "^4.0.2",
+    "electron-builder": "^20.38.5",
+    "electron-prebuilt": "^1.4.13",
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
@@ -25,8 +29,6 @@
     "webpack-synchronizable-shell-plugin": "^0.0.7"
   },
   "dependencies": {
-    "electron": "^4.0.2",
-    "electron-prebuilt": "^1.4.13",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },
@@ -37,6 +39,21 @@
     "webpack-build": "npm run webpack -- --mode=production --env.env=prod",
     "webpack": "webpack",
     "electron-dev": "cross-env NODE_ENV=development electron index.js",
-    "clean-build": "rimraf build"
+    "clean-build": "rimraf build",
+    "clean-dist": "rimraf dist",
+    "build-windows": "npm run clean-dist && electron-builder -w"
+  },
+  "build": {
+    "directories": {
+      "buildResources": "./build"
+    },
+    "files": [
+      "**/*",
+      "build/**/*"
+    ],
+    "win": {
+      "target": "msi",
+      "icon": "./src/icons/icon.ico"
+    }
   }
 }

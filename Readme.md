@@ -16,3 +16,9 @@ Start development:
 ````javascript
 npm run start or yarn start
 ````
+
+Build installer for Windows:
+````javascript
+npm run build-windows
+````
+You will be able to find your installer (msi) in *dist* folder!

@@ -1,14 +1,24 @@
 const { app, BrowserWindow } = require('electron');
+const url = require('url');
+const path = require('path');
 
 if(process.env.NODE_ENV === "development") {
-  const path = require('path');
   const reload = require('electron-reload')(path.resolve(__dirname, 'build'));
 }
 
 function createWindow () {
   win = new BrowserWindow({ width: 1024, height: 768, webPreferences: { nodeIntegration: false } });
-  win.webContents.openDevTools();
-  win.loadURL(`file://${__dirname}/build/index.html`);
+
+  win.loadURL(url.format({
+    pathname: path.resolve(__dirname, 'build', 'index.html'),
+    protocol: 'file',
+    slashes: true,
+  }));
+
+  if(process.env.NODE_ENV === "development") {
+    win.webContents.openDevTools();
+  }
+
 };
 
 app.on('ready', createWindow);

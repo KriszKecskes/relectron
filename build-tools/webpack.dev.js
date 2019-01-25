@@ -5,6 +5,7 @@ const exec = require('child_process').exec;
 module.exports = {
 
   devtool: 'eval-source-map',
+  stats: 'minimal',
 
   module: {
     rules: [

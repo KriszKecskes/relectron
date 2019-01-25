@@ -30,7 +30,10 @@ module.exports = {
     new webpack.ProgressPlugin()
   ],
 
-  target: 'node',
+  node: {
+    __dirname: false,
+    __filename: false
+  },
 
   resolve: {
     extensions: ['.js', '.jsx']

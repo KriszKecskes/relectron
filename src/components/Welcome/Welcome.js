@@ -5,7 +5,7 @@ export default () => {
 
   return(
     <div className="welcome">
-      <h1>🤖 Welcome in the Relectron!</h1>
+      <h1>🤖 Welcome to the Relectron!</h1>
     </div>
   );
 

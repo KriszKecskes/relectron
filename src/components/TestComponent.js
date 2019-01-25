@@ -1,8 +1,9 @@
 import React from 'react';
+import './TestComponent.css';
 
 const TestComponent = () => {
   return(
-    <div>Test Component</div>
+    <div className="test-component">Test Component</div>
   );
 };
 

@@ -4,7 +4,11 @@ const exec = require('child_process').exec;
 
 module.exports = {
 
-  devtool: 'eval-source-map',
+  devtool: 'eval',
+
+  devServer: {
+    port: 9000
+  },
 
   module: {
     rules: [

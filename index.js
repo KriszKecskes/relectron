@@ -2,10 +2,6 @@ const { app, BrowserWindow } = require('electron');
 const url = require('url');
 const path = require('path');
 
-if(process.env.NODE_ENV === "development") {
-  const reload = require('electron-reload')(path.resolve(__dirname, 'build'));
-}
-
 function createWindow () {
 
   win = new BrowserWindow({ 
@@ -18,11 +14,15 @@ function createWindow () {
 
   win.setMenu(null);
 
-  win.loadURL(url.format({
-    pathname: path.resolve(__dirname, 'build', 'index.html'),
-    protocol: 'file',
-    slashes: true,
-  }));
+  if(process.env.NODE_ENV === "development") {
+    win.loadURL(`http://localhost:9000/`);
+  } else { 
+    win.loadURL(url.format({
+      pathname: path.resolve(__dirname, 'build', 'index.html'),
+      protocol: 'file',
+      slashes: true,
+    }));
+  } 
 
   if(process.env.NODE_ENV === "development") {
     win.webContents.openDevTools();

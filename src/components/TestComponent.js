@@ -3,7 +3,7 @@ import './TestComponent.css';
 
 const TestComponent = () => {
   return(
-    <div className="test-component">Test Component</div>
+    <div className="test-component">Test Component! :-)</div>
   );
 };
 

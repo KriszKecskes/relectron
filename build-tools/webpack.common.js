@@ -7,7 +7,7 @@ module.exports = {
   entry: './src/App.js',
 
   output: {
-    filename: 'bundle.[contenthash].js',
+    filename: 'bundle.js',
     path: paths.build
   },
 
@@ -30,6 +30,10 @@ module.exports = {
     new webpack.ProgressPlugin()
   ],
 
-  target: 'node'
+  target: 'node',
+
+  resolve: {
+    extensions: ['.js', '.jsx']
+  }
 
 }

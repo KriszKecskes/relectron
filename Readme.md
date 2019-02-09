@@ -17,7 +17,12 @@ Build installer for Windows:
 ````javascript
 npm run build-windows or yarn build-windows
 ````
-You will be able to find your installer (msi) in **dist** folder!
+
+Build installer for Linux:
+````javascript
+npm run build-linux or yarn build-linux
+````
+You will be able to find your installer (msi or snap) in **dist** folder!
 
 ![Relectron](./screenshot.JPG)
 

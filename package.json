@@ -49,7 +49,8 @@
     "electron-dev": "cross-env NODE_ENV=development electron index.js",
     "clean-build": "rimraf build",
     "clean-dist": "rimraf dist",
-    "build-windows": "npm run clean-dist && npm run build && electron-builder -w"
+    "build-windows": "npm run clean-dist && npm run build && electron-builder -w",
+    "build-linux": "npm run clean-dist && npm run build && electron-builder -l"
   },
   "build": {
     "directories": {
@@ -62,6 +63,13 @@
     "win": {
       "target": "msi",
       "icon": "./src/icons/icon.ico"
+    },
+    "linux": {
+      "target": "snap",
+      "category": "utility"
     }
+  },
+  "resolutions": {
+    "terser": "3.14.1"
   }
 }
